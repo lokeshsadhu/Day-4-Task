@@ -28,11 +28,11 @@
       <h2>V-on</h2>
       <div>
         <button type="button" class="btn btn-primary" @click="count++">Increase</button>
-        <button type="button" class="btn btn-primary" @click="count--">Decrease</button>
+        <button type="button" class="btn btn-primary ml-2" @click="count--">Decrease</button>
         <h3>Count : {{ count }}</h3>
         <form @submit.prevent="onSubmit">
           <label for="input">Enter name :</label>
-          <input v-model="name" @keyup.enter="setName(event)" type="text" id="input">
+          <input class="form-control" v-model="name" @keyup.enter="setName(event)" type="text" id="input">
           <h3>Name : {{ result }}</h3>
           <button type="button" class="btn btn-primary" @click="(event) => warn('Form cannot be submitted yet.', event)">
             Submit
@@ -43,7 +43,7 @@
       <div>
         <h2>Computed Property</h2>
         <label for="input">Enter Word :</label>
-        <input v-model="oldWord" @keyup.enter="setWord(event)" type="text" id="input">
+        <input class="form-control" v-model="oldWord" @keyup.enter="setWord(event)" type="text" id="input">
         <h3>You Entered : {{ newWord }}</h3>
         <h3>Reversed Senetnce : {{ modified }}</h3>
       </div>
@@ -52,7 +52,7 @@
     <div>
       <h2>Watch Property</h2>
       <label for="question">Enter Question :</label>
-      <input v-model="question" type="text" id="question">
+      <input class="form-control" v-model="question" type="text" id="question">
       <h3>Answer : {{ answer }}</h3>
       <img :src="responseData.image">
     </div>
